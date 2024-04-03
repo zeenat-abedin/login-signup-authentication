@@ -24,9 +24,9 @@ function Register() {
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
 
-    useEffect(() => {
-     userRef.current.focus()
-    }, [])
+    // useEffect(() => {
+    //  userRef.current.focus()
+    // }, [])
 
    useEffect(() => {
     const result = USER_REGEX.test(user) 
@@ -52,7 +52,7 @@ function Register() {
         <p ref={errRef} className={errorMessage ? "errorMessage" : "offscreen"}>{errorMessage}</p>
         <form action="">
               <label htmlFor='username'>Username: </label>
-              <input type='text' id='username' name='username' value={user} onChange={e => setUser(e.target.value)}/>
+              <input type='text' id='username' name='username' value={user} onChange={e => setUser(e.target.value)} ref={useRef} autoComplete='off' required aria-invalid={validName ? "false" : "true"} aria-describedby='uidnote' onFocus={() => setUserFocus(true)} onBlur={()=>setUserFocus(false) } />
         </form>
     </section>
   )
