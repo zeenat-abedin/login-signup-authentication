@@ -49,7 +49,7 @@ function Register() {
     
   return (
     <section>
-      
+          <p ref={errRef} className={errorMessage ? "errorMessage" : "offscreen"}>{errorMessage}</p>
     </section>
   )
 }
