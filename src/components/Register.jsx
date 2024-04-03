@@ -49,7 +49,11 @@ function Register() {
     
   return (
     <section>
-          <p ref={errRef} className={errorMessage ? "errorMessage" : "offscreen"}>{errorMessage}</p>
+        <p ref={errRef} className={errorMessage ? "errorMessage" : "offscreen"}>{errorMessage}</p>
+        <form action="">
+              <label htmlFor='username'>Username: </label>
+              <input type='text' id='username' name='username' value={user} onChange={e => setUser(e.target.value)}/>
+        </form>
     </section>
   )
 }
