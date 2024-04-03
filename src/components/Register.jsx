@@ -24,9 +24,9 @@ function Register() {
     const [errorMessage, setErrorMessage] = useState('')
     const [success, setSuccess] = useState(false)
 
-    useEffect(() => {
+useEffect(() => {
      userRef.current.focus()
-    }, [])
+}, [])
 
 useEffect(() => {
     const result = USER_REGEX.test(user) 
@@ -35,6 +35,11 @@ useEffect(() => {
     setValidName(result)   
 }, [user])
     
+  useEffect(() => {
+   const result = PWD_REGEX.test(pwd) && pwd === matchedPwd
+   setValidPwd(result)
+  }, [pwd, matchedPwd])
+       
     
   return (
     <div>
