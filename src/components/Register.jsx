@@ -43,10 +43,14 @@ function Register() {
   }, [pwd, matchedPwd])
        
     
+   useEffect(() => {
+      setErrorMessage('')
+   }, [user, pwd, matchedPwd])  
+    
   return (
-    <div>
+    <section>
       
-    </div>
+    </section>
   )
 }
 
